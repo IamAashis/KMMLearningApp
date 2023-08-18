@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
  * Created by Aashis on 16,August,2023
  */
 @Serializable
-data class MovieData(
+internal data class MovieRemote(
     val id: Int? = null,
     val title: String? = null,
     val overview: String? = null,

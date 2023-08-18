@@ -1,5 +1,6 @@
 package com.android.kmmfirstapp.data.remote
 
+import com.android.kmmfirstapp.domain.model.Movie
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
@@ -14,7 +15,7 @@ class MovieService: KtorApi() {
         parameter("page", page)
     }.body()
 
-    suspend fun getMovie(movieId: Int): MovieData = client.get {
+    suspend fun getMovie(movieId: Int): Movie = client.get {
         pathUrl("movie/${movieId}")
     }.body()
 }
