@@ -1,10 +1,15 @@
 package com.android.kmmfirstapp.util
 
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 
 /**
- * Created by Aashis on 16,August,2023
+ * Created by Aashis on 18,August,2023
  */
-interface Dispatcher {
-    val io: CoroutineDispatcher
+
+internal class AndroidDispatcher: Dispatcher{
+    override val io: CoroutineDispatcher
+        get() = Dispatchers.IO
 }
+
+internal actual fun provideDispatcher(): Dispatcher = AndroidDispatcher()
