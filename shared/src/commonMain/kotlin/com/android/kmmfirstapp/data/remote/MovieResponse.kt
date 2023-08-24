@@ -7,5 +7,5 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 internal data class MovieResponse(
-    val results: List<MovieRemote>? = null
+    val results: List<MovieRemote>
 )

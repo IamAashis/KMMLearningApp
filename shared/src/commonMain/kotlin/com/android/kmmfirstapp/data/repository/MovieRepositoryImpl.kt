@@ -10,10 +10,10 @@ import com.android.kmmfirstapp.domain.repository.MovieRepository
  */
 internal class MovieRepositoryImpl(
     private val remoteDateSource: RemoteDataSource
-): MovieRepository {
+) : MovieRepository {
 
     override suspend fun getMovies(page: Int): List<Movie> {
-        return remoteDateSource.getMovies(page = page).results!!.map {
+        return remoteDateSource.getMovies(page = page).results.map {
             it.toMovie()
         }
     }

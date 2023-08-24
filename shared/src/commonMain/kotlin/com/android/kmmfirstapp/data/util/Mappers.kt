@@ -8,7 +8,7 @@ import com.android.kmmfirstapp.domain.model.Movie
  */
 
 // convert data to data layer to domain layer
-internal fun MovieRemote.toMovie(): Movie {
+internal fun MovieRemote.toMovie(): Movie{
     return Movie(
         id = id,
         title = title,
